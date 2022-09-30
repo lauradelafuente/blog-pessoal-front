@@ -1,11 +1,18 @@
-.titulo {
-    color: blueviolet;
-    text-align: center;
+.caixa {
+    background-color: #607d8b;
 }
 
-.img {
-    width: 500px;
-    height: 500px;
-    display: block; /*tranforma a imagem em um bloco*/
-    margin: 0 auto; /*centraliza a imagem automaticamente*/
+.titulo {
+    color: white !important;
+    font-weight: bold !important;
+}
+
+.botao {
+    border-color: white !important;
+    background-color: #607d8b;
+    color:white !important;
+}
+
+.postagens {
+    background-color: white;
 }

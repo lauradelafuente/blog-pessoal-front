@@ -1,0 +1,17 @@
+.cursor {
+    cursor: pointer;
+    color:white;
+    
+}
+
+.text-decorator-none {
+    text-decoration: none;
+}
+
+.txt {
+    justify-content: space-evenly;
+    font-family: 'Quicksand', sans-serif;
+    background-color: #607d8b;
+}
+
+

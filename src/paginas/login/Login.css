@@ -1,0 +1,17 @@
+.texto1{
+    font-weight: bold !important;
+}
+
+.imagem{
+    background-image: url(https://www.correio24horas.com.br/fileadmin/_processed_/6/a/csm_jornalodia_6fa1288834.jpg);
+    background-repeat: no-repeat;
+    width: 100vh;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.text-decorator-none{
+    text-decoration: none; /*tira o sublinhado de "logar"*/
+}
+

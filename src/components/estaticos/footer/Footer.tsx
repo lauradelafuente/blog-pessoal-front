@@ -13,7 +13,7 @@ function Footer() {
             <Grid alignItems="center" item xs={12}>
                 <Box className='box1'  style={{backgroundColor:'#558b2f'}}>
                     <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
-                        <Typography variant="h5" align="center" gutterBottom className='texto'>Me acompanhe nas redes sociais:</Typography>
+                        <Typography variant="h5" align="center" gutterBottom className='texto3'>Me acompanhe nas redes sociais:</Typography>
                     </Box>
                     <Box display="flex" alignItems="center" justifyContent="center">
                         <a href="https://github.com/lauradelafuente" target="_blank">
@@ -29,11 +29,11 @@ function Footer() {
                 </Box>
                 <Box className='box2'  style={{backgroundColor:'#8bc34a'}}>
                     <Box paddingTop={1}>
-                        <Typography variant="subtitle2" align="center" gutterBottom className='texto'>© 2022 Copyright:</Typography>
+                        <Typography variant="subtitle2" align="center" gutterBottom>© 2022 Copyright:</Typography>
                     </Box>
                     <Box>
                         <a target="_blank" href="https://brasil.generation.org">
-                            <Typography variant="subtitle2" gutterBottom className='texto' align="center">github.com/lauradelafuente</Typography>
+                            <Typography variant="subtitle2" gutterBottom className='text-decorator-none' align="center">github.com/lauradelafuente</Typography>
                         </a>
                     </Box>
                 </Box>

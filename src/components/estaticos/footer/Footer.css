@@ -13,9 +13,13 @@
     color: white;
 }
 
-.texto {
+.texto3 {
     color: white;
+    font-family: 'Rubik Dirt', cursive !important;;
 }
 
+.text-decorator-none{
+    text-decoration: none; /*tira o sublinhado de "logar"*/
+}
 
 

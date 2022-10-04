@@ -9,38 +9,38 @@ function Navbar() {
         <>
         <AppBar position="static" style={{backgroundColor:'#558b2f'}}>
             <Toolbar variant="dense" className='txt' space-evenly>
-                <Box className='cursor' paddingX={6}>
-                    <Typography variant="h5" color="inherit" className='txt' >
-                        BlogPessoal
+                <Box className='cursor' paddingX={5}>
+                    <Typography variant="h5" color="inherit" className='txt'>
+                        SpaceSports
                     </Typography>
                 </Box>
 
             <Grid container justifyContent="flex-end">
                 <Box display="flex" justifyContent="start">
-                    <Box mx={1} className='cursor' paddingX={6}>
+                    <Box mx={1} className='cursor' paddingX={5}>
                         <Typography variant="h6" color="inherit" className='txt'>
-                            home
+                            HOME
                         </Typography>
                     </Box>
-                    <Box mx={1} className='cursor' paddingX={6}>
+                    <Box mx={1} className='cursor' paddingX={5}>
                         <Typography variant="h6" color="inherit" className='txt'>
-                            posts
+                            POSTS
                         </Typography>
                     </Box>
-                    <Box mx={1} className='cursor' paddingX={6}>
+                    <Box mx={1} className='cursor' paddingX={5}>
                         <Typography variant="h6" color="inherit" className='txt'>
-                            themes
+                            THEMES
                         </Typography>
                     </Box>
-                    <Box mx={1} className='cursor' paddingX={6}>
+                    <Box mx={1} className='cursor' paddingX={5}>
                         <Typography variant="h6" color="inherit" className='txt'>
-                            register themes
+                            REGISTRER THEMES
                         </Typography>
                     </Box>
                     <Link to='/login' className='text-decorator-none'>
-                        <Box mx={1} className='cursor' paddingX={6}>
+                        <Box mx={1} className='cursor' paddingX={5}>
                             <Typography variant="h6" color="inherit" className='txt'>
-                            logout
+                            LOGOUT
                             </Typography>
                         </Box>
                     </Link>

@@ -1,9 +1,11 @@
 .texto1{
     font-weight: bold !important;
+    font-family: 'Rubik Dirt', cursive !important;
+    color: black !important;
 }
 
-.imagem{
-    background-image: url(https://www.correio24horas.com.br/fileadmin/_processed_/6/a/csm_jornalodia_6fa1288834.jpg);
+.imagem1{
+    background-image: url(https://placar.abril.com.br/wp-content/uploads/2021/09/alx_esporte-futebol-memoria-pele-19700621-015_original.jpeg?quality=70&strip=info&resize=850,567);
     background-repeat: no-repeat;
     width: 100vh;
     min-height: 100vh;

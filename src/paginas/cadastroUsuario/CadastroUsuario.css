@@ -1,0 +1,17 @@
+.imagem2{
+    background-image: url(https://www.basketballnetwork.net/.image/t_share/MTg3MTYwOTU1NTczMDUzMzI1/rodman-copy.jpg);
+    background-repeat: no-repeat;
+    width: 100vh;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.texto2 {
+    font-weight: bold !important;
+    font-family: 'Rubik Dirt', cursive !important;
+}
+
+.bcancelar{
+    margin-right: 20px !important;
+}

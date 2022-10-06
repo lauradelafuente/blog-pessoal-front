@@ -8,13 +8,14 @@ import {Link} from 'react-router-dom';
 import './CadastroUsuario.css';
 
 function CadastroUsuario() {
-    let navigate = useNavigate(); //usado em useEffect
+    let navigate = useNavigate(); //usado em useEffect, usado para navegar de uma tela para outra
     const [confirmarSenha,setConfirmarSenha] = useState<String>("") //verifica se o valor do confirmar senha é igual a senha
     const [user, setUser] = useState<User>( //contém as informações de cadastro
         {
             id: 0,
             nome: '',
             usuario: '',
+            foto: '',
             senha: ''
         })
 
@@ -23,6 +24,7 @@ function CadastroUsuario() {
             id: 0,
             nome: '',
             usuario: '',
+            foto: '',
             senha: ''
         })
 
@@ -64,9 +66,10 @@ function CadastroUsuario() {
                 <form onSubmit={onSubmit}>
                         <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='texto2'>Cadastrar</Typography>
                         <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='nome' label='nome' variant='outlined' name='nome' margin='normal' fullWidth style={{backgroundColor:'#eeeeee'}}/>
-                        <TextField value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='usuario' variant='outlined' name='usuario' margin='normal' fullWidth style={{backgroundColor:'#eeeeee'}}/>
+                        <TextField value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='usuário' variant='outlined' name='usuario' margin='normal' fullWidth style={{backgroundColor:'#eeeeee'}}/>
+                        <TextField value={user.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='foto' label='foto (url)' variant='outlined' name='foto' margin='normal' fullWidth style={{backgroundColor:'#eeeeee'}}/>
                         <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='senha' variant='outlined' name='senha' margin='normal' fullWidth type='password' style={{backgroundColor:'#eeeeee'}}/>
-                        <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarSenha' label='confirmarSenha' variant='outlined' name='confirmarSenha' margin='normal' fullWidth type='password' style={{backgroundColor:'#eeeeee'}}/>
+                        <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarSenha' label='confirmar senha' variant='outlined' name='confirmarSenha' margin='normal' fullWidth type='password' style={{backgroundColor:'#eeeeee'}}/>
                         <Box marginTop={2} textAlign='center'>
                             <Link to='/login' className='text-decorator-none'>
                             <Button type="submit" variant='contained' className='bcancelar'style={{backgroundColor:'#7cb342'}}>

@@ -1,6 +1,7 @@
 .titulo {
-    color: white !important;
+    color: #33691e !important;
     font-weight: bold !important;
+    font-family: 'Rubik Dirt', cursive !important;
 }
 
 .botao {
@@ -10,8 +11,4 @@
 
 .postagens {
     background-color: white;
-}
-
-.txt {
-    font-family: 'Rubik Dirt', cursive !important;
 }

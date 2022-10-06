@@ -8,7 +8,7 @@ function Navbar() {
     return (
         <>
         <AppBar position="static" style={{backgroundColor:'#558b2f'}}>
-            <Toolbar variant="dense" className='txt' space-evenly>
+            <Toolbar variant="dense" space-evenly>
                 <Box className='cursor' paddingX={5}>
                     <Typography variant="h5" color="inherit" className='txt'>
                         SpaceSports

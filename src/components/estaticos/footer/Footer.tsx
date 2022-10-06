@@ -11,7 +11,7 @@ function Footer() {
         <>
         <Grid container direction="row" justifyContent="center" alignItems="center">
             <Grid alignItems="center" item xs={12}>
-                <Box className='box1'  style={{backgroundColor:'#558b2f'}}>
+                <Box className='box1' style={{backgroundColor:'#558b2f'}}>
                     <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
                         <Typography variant="h5" align="center" gutterBottom className='texto3'>Me acompanhe nas redes sociais:</Typography>
                     </Box>

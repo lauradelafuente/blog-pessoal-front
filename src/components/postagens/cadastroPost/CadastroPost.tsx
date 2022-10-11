@@ -2,20 +2,33 @@ import React, { ChangeEvent, useEffect, useState } from 'react'
 import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText } from "@material-ui/core"
 import './CadastroPost.css';
 import { useNavigate, useParams } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
 import Postagem from '../../../models/Postagem';
 import Tema from '../../../models/Tema';
 import { busca, buscaId, put, post } from '../../../services/Service';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 
 function CadastroPost() {
     let navigate = useNavigate(); 
     const { id } = useParams<{ id: string }>(); //captura os parametros enviados em uma url (id)
     const [temas, setTemas] = useState<Tema[]>([]) //array que trabalha com a listagem de temas cadastrados
-    const [token, setToken] = useLocalStorage('token'); //token armazenado no LocalStorage
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+      );
 
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado")
+            toast.error('Você precisa estar logado.', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme:"colored",
+                progress: undefined,
+            });
             navigate("/login")
 
         }
@@ -50,7 +63,7 @@ function CadastroPost() {
     }, [id]) //monitora o id, aciona getTemas e faz a busca da postagem por meio do ID 
 
     async function getTemas() {
-        await busca("/tema", setTemas, {
+        await busca("/temas", setTemas, {
             headers: {
                 'Authorization': token
             } 
@@ -81,14 +94,32 @@ function CadastroPost() {
                     'Authorization': token
                 }
             }) //se o id já existe, atualiza a postagem
-            alert('Postagem atualizada com sucesso');
+            toast.success('Postagem atualizada!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme:"colored",
+                progress: undefined,
+            });
         } else {
             post(`/postagens`, postagem, setPostagem, {
                 headers: {
                     'Authorization': token
                 }
             }) //se o id não existe, cadastra uma nova postagem
-            alert('Postagem cadastrada com sucesso');
+            toast.success('Postagem cadastrada!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme:"colored",
+                progress: undefined,
+            });
         }
         back()
     }
@@ -98,9 +129,9 @@ function CadastroPost() {
     } //direciona para a rota de postagem 
 
     return (
-        <Container maxWidth="sm" className="topo">
+        <Container maxWidth="sm" className="topo" style={{backgroundColor:'#e0e0e0'}}>
             <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro postagem</Typography>
+                <Typography variant="h3" color="textSecondary" component="h1" align="center" className="fontepost">Formulário de cadastro postagem</Typography>
                 <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
                 <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
                 <FormControl >
@@ -108,7 +139,7 @@ function CadastroPost() {
                     <Select
                         labelId="demo-simple-select-helper-label"
                         id="demo-simple-select-helper"
-                        onChange={(e) => buscaId(`/tema/${e.target.value}`, setTema, {
+                        onChange={(e) => buscaId(`/temas/${e.target.value}`, setTema, {
                             headers: {
                                 'Authorization': token
                             } //aciona a função buscaId e retorna a listagem de temas, capturando o valor especifico que o usuario selecioar
@@ -118,7 +149,7 @@ function CadastroPost() {
                                 <MenuItem value={tema.id}>{tema.descricao}</MenuItem>
                             )) //mapeia os temas e pega o id + descrição de cada tema para exibição
                         }
-                    </Select>
+                     </Select>
                     <FormHelperText>Escolha um tema para a postagem</FormHelperText>
                     <Button type="submit" variant="contained" color="primary">
                         Finalizar

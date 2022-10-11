@@ -2,14 +2,17 @@ import React, {useState, useEffect, ChangeEvent} from 'react';
 import {Grid, Typography, TextField, Button} from '@material-ui/core';
 import {Box} from '@mui/material';
 import {Link, useNavigate} from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
 import { login } from '../../services/Service';
 import UserLogin from '../../models/UserLogin';
 import './Login.css';
+import { useDispatch } from 'react-redux';
+import { addToken } from '../../store/tokens/actions';
+import { toast } from 'react-toastify';
 
 function Login() {
     let navigate = useNavigate()
-    const[token, setToken] = useLocalStorage('token');
+    const dispatch = useDispatch(); 
+    const[token, setToken] = useState('');
 
     const [userLogin, setUserLogin] = useState<UserLogin>( //hook useState faz o controle dos estados dos componentes,set permite alterar
         {
@@ -30,6 +33,7 @@ function Login() {
 
     useEffect(() => {
         if(token !== '') { //se o token nao estiver vazio, redireciona para home
+            dispatch(addToken(token))
             navigate('/home')
         }
     }, [token])
@@ -38,9 +42,27 @@ function Login() {
         e.preventDefault(); //impede que o botao atualize a tela 
         try{
             await login(`/usuarios/logar`, userLogin, setToken)
-            alert('Você está logado!');
+            toast.success('Você está logado!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme:"colored",
+                progress: undefined,
+            });;
         }catch(error){
-            alert('Dados inválidos. Você ainda não pode logar :(')
+            toast.error('Dados inválidos. Você ainda não pode logar :(', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme:"colored",
+                progress: undefined,
+            });;
         } //tentativa de execução
     }
 

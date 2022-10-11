@@ -2,14 +2,18 @@ import React, { useState, useEffect, ChangeEvent } from 'react'
 import { Container, Typography, TextField, Button } from "@material-ui/core"
 import { useNavigate, useParams } from 'react-router-dom';
 import './CadastroTema.css';
-import useLocalStorage from 'react-use-localstorage';
 import Tema from '../../../models/Tema';
 import { buscaId, post, put } from '../../../services/Service';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 
 function CadastroTema() {
     let navigate = useNavigate(); 
     const {id} = useParams<{id:string}>()//captura os parametros enviados em uma url (id)
-    const [token,setToken] = useLocalStorage('token');
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+      );
     const [tema,setTema] = useState<Tema>({
         id:0,
         descricao:''
@@ -17,7 +21,16 @@ function CadastroTema() {
 
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado")
+            toast.error('Você precisa estar logado.', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme:"colored",
+                progress: undefined,
+            });;
             navigate("/login")
     
         }
@@ -54,14 +67,32 @@ function CadastroTema() {
                     'Authorization': token
                 }
             }) //se o id existir, tentará atualizar o tema
-            alert('Tema atualizado!');
+            toast.success('Tema atualizado!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme:"colored",
+                progress: undefined,
+            });;
         } else { //se o id não existir, poderá ser feito o cadastro de um novo tema 
             post(`/temas`, tema, setTema, {
                 headers: {
                     'Authorization': token
                 }
             })
-            alert('Tema cadastrado!');
+            toast.success('Tema cadastrado!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme:"colored",
+                progress: undefined,
+            });;
         }
         back() //redireciona para o componente temas (/temas)
     }

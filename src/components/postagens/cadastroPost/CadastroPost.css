@@ -1,3 +1,9 @@
 .topo{
     margin-top: 20px;
 }
+
+.fontepost {
+    color: black !important;
+    font-weight: bold !important;
+    font-family: 'Rubik Dirt', cursive !important;
+}

@@ -1,3 +1,18 @@
 .text-decorator-none {
     text-decoration: none;
 }
+
+.txtlistat {
+    color: black !important;
+    font-family: 'Rubik Dirt', cursive !important;
+}
+
+.centro {
+    text-align: center;
+}
+
+.botao {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}

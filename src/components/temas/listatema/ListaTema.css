@@ -4,15 +4,10 @@
 
 .txtlistat {
     color: black !important;
-    font-family: 'Rubik Dirt', cursive !important;
-}
-
-.centro {
-    text-align: center;
+    font-family: 'Montserrat Alternates', sans-serif !important;
 }
 
 .botao {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+    border-color: white !important;
+    color:white !important;
 }

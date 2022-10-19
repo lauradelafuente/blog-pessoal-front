@@ -1,3 +1,9 @@
 .topo {
     margin-top: 20px;
+    align-items: center;
+}
+
+.textoform {
+    font-family: 'Zen Maru Gothic', sans-serif !important;
+    color: white !important;
 }

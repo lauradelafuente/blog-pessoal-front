@@ -1,9 +1,10 @@
 .topo{
-    margin-top: 20px;
+    margin-top: 15px;
+    margin-bottom: 40px;
 }
 
 .fontepost {
-    color: black !important;
+    color: white !important;
     font-weight: bold !important;
-    font-family: 'Rubik Dirt', cursive !important;
+    font-family: 'Zen Maru Gothic', sans-serif !important;
 }

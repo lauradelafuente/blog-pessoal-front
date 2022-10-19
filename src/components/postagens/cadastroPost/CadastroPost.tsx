@@ -129,14 +129,15 @@ function CadastroPost() {
     } //direciona para a rota de postagem 
 
     return (
-        <Container maxWidth="sm" className="topo" style={{backgroundColor:'#e0e0e0'}}>
-            <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" className="fontepost">Formulário de cadastro postagem</Typography>
-                <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
-                <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
-                <FormControl >
-                    <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
+        <Container maxWidth="sm" className="topo" style={{backgroundColor: 'black'}}>
+            <form onSubmit={onSubmit} style={{backgroundColor: 'black'}}>
+                <Typography variant="h3" color="textSecondary" component="h1" align="center" className="fontepost topo">Preencha com o que tiver de novidade</Typography>
+                <TextField style={{backgroundColor: 'white'}} value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
+                <TextField style={{backgroundColor: 'white'}} value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
+                <FormControl>
+                    <InputLabel style={{color: 'white'}} id="demo-simple-select-helper-label">Tema </InputLabel>
                     <Select
+                        style={{color: 'white'}}
                         labelId="demo-simple-select-helper-label"
                         id="demo-simple-select-helper"
                         onChange={(e) => buscaId(`/temas/${e.target.value}`, setTema, {
@@ -150,7 +151,7 @@ function CadastroPost() {
                             )) //mapeia os temas e pega o id + descrição de cada tema para exibição
                         }
                      </Select>
-                    <FormHelperText>Escolha um tema para a postagem</FormHelperText>
+                    <FormHelperText style={{color: 'white'}}>Escolha um tema para a postagem</FormHelperText>
                     <Button type="submit" variant="contained" color="primary">
                         Finalizar
                     </Button>

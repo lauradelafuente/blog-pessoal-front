@@ -102,11 +102,12 @@ function CadastroTema() {
     }
 
     return (
-        <Container maxWidth="sm" className="topo">
+        <Container maxWidth="sm" className='container'>
             <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro tema</Typography>
-                <TextField value={tema.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="descricao" label="descricao" variant="outlined" name="descricao" margin="normal" fullWidth />
-                <Button type="submit" variant="contained" color="primary">
+                <Typography variant="h2" color="textSecondary" component="h1" align="center" className='textoform'>TEMA</Typography>
+                <Typography variant="h5" color="textSecondary" component="h1" align="center" className='textoform'>O tema pode ser uma liga, um(a) jogador(a), um time, fique à vontade na descrição</Typography>
+                <TextField value={tema.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="descricao" label="descrição" variant="outlined" name="descricao" margin="normal" fullWidth style={{backgroundColor:'white'}}/>
+                <Button type="submit" variant="contained" color="primary" style={{backgroundColor:'#283593'}}>
                     Finalizar
                 </Button>
             </form>

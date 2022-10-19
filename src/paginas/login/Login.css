@@ -1,7 +1,8 @@
 .texto1{
     font-weight: bold !important;
-    font-family: 'Rubik Dirt', cursive !important;
-    color: black !important;
+    font-family: 'Zen Maru Gothic', sans-serif !important;
+    color: white !important;
+    text-shadow: -1px -1px #283593, 1px 1px #333
 }
 
 .imagem1{
@@ -16,4 +17,20 @@
 .text-decorator-none{
     text-decoration: none; /*tira o sublinhado de "logar"*/
 }
+
+.textox{
+    font-family: 'Zen Maru Gothic', sans-serif !important;
+    color: white !important;
+}
+
+.textob{
+    font-family: 'Zen Maru Gothic', sans-serif !important;
+    color: #3f51b5 !important;
+}
+
+.botao {
+    border-color: white !important;
+    background-color: #283593 !important;
+}
+
 

@@ -32,7 +32,7 @@ function Navbar() {
 
     var navbarComponent;
     if (token != "") { ////navbar é renderizado novamente se houver um token
-        navbarComponent = <AppBar position="static" style={{backgroundColor:'#558b2f'}}>
+        navbarComponent = <AppBar position="static" style={{backgroundColor:'#283593'}}>
         <Toolbar variant="dense" space-evenly>
             <Box className='cursor' paddingX={5}>
                 <Typography variant="h5" color="inherit" className='txt'>

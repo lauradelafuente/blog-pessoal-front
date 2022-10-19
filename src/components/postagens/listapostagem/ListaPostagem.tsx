@@ -17,6 +17,8 @@ function ListaPostagem() {
   );
   let navigate = useNavigate();
 
+  const userId = useSelector<TokenState, TokenState['id']>((state)=>state.id);
+
   useEffect(() => {
     if (token === "") {
       toast.error('Você precisa estar logado.', {
@@ -48,9 +50,9 @@ function ListaPostagem() {
   return (
     <>
       {posts.map((post) => ( 
-        <Box m={2}>
+        <Box m={2} textAlign='center'>
           <Card variant="outlined">
-            <CardContent style={{backgroundColor:'#eeeeee'}}>
+            <CardContent>
               <Typography color="textSecondary" gutterBottom className="txtlistap">
                 Postagens
               </Typography>
@@ -64,14 +66,14 @@ function ListaPostagem() {
                 {post.tema?.descricao}
               </Typography>
             </CardContent>
-            <CardActions style={{backgroundColor:'#eeeeee'}}>
+            <CardActions>
               <Box display="flex" justifyContent="center" mb={1.5}>
                 <Link
                   to={`/formularioPostagem/${post.id}`}
                   className="text-decorator-none"
                 >
                   <Box mx={1}>
-                    <Button variant="contained" className="marginLeft" size="small" color="primary" style={{backgroundColor:'#689f38'}}>
+                    <Button variant="contained" className="marginLeft" size="small" color="primary" style={{backgroundColor:'#283593'}}>
                       atualizar
                     </Button>
                   </Box>
@@ -81,7 +83,7 @@ function ListaPostagem() {
                   className="text-decorator-none"
                 >
                   <Box mx={1}>
-                    <Button variant="contained" size="small" color="secondary" style={{backgroundColor:'#558b2f'}}>
+                    <Button variant="contained" size="small" color="secondary" style={{backgroundColor:'#1a237e'}}>
                       deletar
                     </Button>
                   </Box>

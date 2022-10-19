@@ -78,12 +78,12 @@ function CadastroUsuario() {
     }
 
     return (
-        <Grid container direction='row' justifyContent='center' alignItems='center' style={{backgroundColor:'#e0e0e0'}}>
+        <Grid container direction='row' justifyContent='center' alignItems='center' style={{backgroundColor:'black'}}>
             <Grid item xs={6} className='imagem2'></Grid>
             <Grid item xs={6} alignItems='center'>
                 <Box paddingX={10}>
                 <form onSubmit={onSubmit}>
-                        <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='texto2'>Cadastrar</Typography>
+                        <Typography variant='h3' gutterBottom component='h3' align='center' className='texto2'>CADASTRE-SE</Typography>
                         <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='nome' label='nome' variant='outlined' name='nome' margin='normal' fullWidth style={{backgroundColor:'#eeeeee'}}/>
                         <TextField value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='usuário' variant='outlined' name='usuario' margin='normal' fullWidth style={{backgroundColor:'#eeeeee'}}/>
                         <TextField value={user.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='foto' label='foto (url)' variant='outlined' name='foto' margin='normal' fullWidth style={{backgroundColor:'#eeeeee'}}/>
@@ -91,11 +91,11 @@ function CadastroUsuario() {
                         <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarSenha' label='confirmar senha' variant='outlined' name='confirmarSenha' margin='normal' fullWidth type='password' style={{backgroundColor:'#eeeeee'}}/>
                         <Box marginTop={2} textAlign='center'>
                             <Link to='/login' className='text-decorator-none'>
-                            <Button type="submit" variant='contained' className='bcancelar'style={{backgroundColor:'#7cb342'}}>
+                            <Button type="submit" variant='contained' className='bcancelar'style={{backgroundColor:'#1a237e'}}>
                                 Cancelar
                             </Button>
                             </Link>
-                            <Button type='submit' variant='contained' className='botao2' style={{backgroundColor:'#689f38'}}>
+                            <Button type='submit' variant='contained' className='bcancelar' style={{backgroundColor:'#283593'}}>
                                 Cadastrar
                             </Button>
                         </Box>

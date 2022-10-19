@@ -47,9 +47,9 @@ function ListaTema() {
   return (
     <>
     { temas.map(tema => (
-      <Box m={2} key={tema.id} className='centro'>
+      <Box m={2} key={tema.id} textAlign='center'>
         <Card variant="outlined">
-          <CardContent style={{backgroundColor:'#eeeeee'}}>
+          <CardContent>
             <Typography color="textSecondary" gutterBottom className='txtlistat'>
               Tema
             </Typography>
@@ -57,19 +57,19 @@ function ListaTema() {
               {tema.descricao}
             </Typography>
           </CardContent>
-          <CardActions style={{backgroundColor:'#eeeeee'}}>
+          <CardActions>
             <Box display="flex" justifyContent="center" mb={1.5} >
 
               <Link to={`/formularioTema/${tema.id}`} className="text-decorator-none">
-                <Box mx={1} className="botao">
-                  <Button variant="contained" size='small' style={{backgroundColor:'#689f38'}}>
+                <Box mx={1} textAlign='center'>
+                  <Button variant="contained" size='small' color="primary" style={{backgroundColor:'#283593'}}>
                     atualizar
                   </Button>
                 </Box>
               </Link>
               <Link to={`/deletarTema/${tema.id}`} className="text-decorator-none">
                 <Box mx={1}>
-                  <Button variant="contained" size='small' style={{backgroundColor:'#558b2f'}}>
+                  <Button variant="contained" size='small' color="secondary" style={{backgroundColor:'#1a237e'}}>
                     deletar
                   </Button>
                 </Box>

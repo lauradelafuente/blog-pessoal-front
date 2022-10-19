@@ -9,9 +9,14 @@
 
 .texto2 {
     font-weight: bold !important;
-    font-family: 'Rubik Dirt', cursive !important;
+    font-family: 'Zen Maru Gothic', sans-serif !important;
+    color: #283593 !important;
+    text-shadow: -1px -1px white, 1px 1px #333
 }
 
 .bcancelar{
     margin-right: 20px !important;
+    border-color: white !important;
+    color:white !important;
 }
+

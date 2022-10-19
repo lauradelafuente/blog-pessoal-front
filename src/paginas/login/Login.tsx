@@ -67,25 +67,26 @@ function Login() {
     }
 
     return(
-        <Grid container direction='row' justifyContent='center' alignItems='center' style={{backgroundColor:'#e0e0e0'}}>
+        <Grid container direction='row' justifyContent='center' alignItems='center' style={{backgroundColor:'black'}}>
             <Grid xs={6} alignItems='center'>
                 <Box paddingX={20}>
                     <form onSubmit={onSubmit}>
-                        <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='texto1'>Entrar</Typography>
+                    <Typography variant='h5' gutterBottom color='textPrimary' component='h5' align='center' className='texto1'>Saiba o que acontece agora no mundo do esporte!</Typography>
+                        <Typography variant='h2' gutterBottom color='textPrimary' component='h2' align='center' className='texto1'>ENTRAR</Typography>
                         <TextField value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>)=>updateModel(e)} id='usuario' label='usuario' variant='outlined' name='usuario' margin='normal' fullWidth style={{backgroundColor:'#eeeeee'}}/>
                         <TextField value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>)=>updateModel(e)} id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth style={{backgroundColor:'#eeeeee'}}/>
                         <Box marginTop={2} textAlign='center'>
-                            <Button type='submit' variant='contained' color='primary' style={{backgroundColor:'#689f38'}}>
+                            <Button type='submit' variant='contained' color='primary' className="botao">
                                 Logar
                             </Button>
                         </Box>
                     </form> 
                     <Box display='flex' justifyContent='center' marginTop={2}>
                         <Box marginRight={1}>
-                            <Typography variant='subtitle1' gutterBottom align='center'>Não tem uma conta?</Typography>
+                            <Typography variant='subtitle1' gutterBottom align='center' className='textox'>Não tem uma conta?</Typography>
                         </Box>
                         <Link to='/cadastrousuario' className='text-decorator-none'> 
-                        <Typography variant='subtitle1' gutterBottom align='center' className='texto1'>Cadastre-se</Typography>
+                        <Typography variant='subtitle1' gutterBottom align='center' className='textob'>Cadastre-se</Typography>
                         </Link>
                     </Box>
                 </Box>

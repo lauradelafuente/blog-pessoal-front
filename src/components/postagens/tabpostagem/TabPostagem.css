@@ -1,7 +1,11 @@
-.titulo{
+.sobre{
     font-weight: bold;
+    font-family: 'Montserrat Alternates', sans-serif !important;
+    color: white !important;
  }
 
  .txttab {
-    font-family: 'Rubik Dirt', cursive !important;
+   font-weight: bold;
+   color: white !important;
+   font-family: 'Zen Maru Gothic', sans-serif !important;
  }

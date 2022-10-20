@@ -79,8 +79,8 @@ function CadastroUsuario() {
 
     return (
         <Grid container direction='row' justifyContent='center' alignItems='center' style={{backgroundColor:'black'}}>
-            <Grid item xs={6} className='imagem2'></Grid>
-            <Grid item xs={6} alignItems='center'>
+            <Grid item xs={7} className='imagem2'></Grid>
+            <Grid item xs={5} alignItems='center'>
                 <Box paddingX={10}>
                 <form onSubmit={onSubmit}>
                         <Typography variant='h3' gutterBottom component='h3' align='center' className='texto2'>CADASTRE-SE</Typography>

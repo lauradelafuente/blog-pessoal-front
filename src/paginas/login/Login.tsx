@@ -68,11 +68,11 @@ function Login() {
 
     return(
         <Grid container direction='row' justifyContent='center' alignItems='center' style={{backgroundColor:'black'}}>
-            <Grid xs={6} alignItems='center'>
+            <Grid xs={5} alignItems='center'>
                 <Box paddingX={20}>
                     <form onSubmit={onSubmit}>
                     <Typography variant='h5' gutterBottom color='textPrimary' component='h5' align='center' className='texto1'>Saiba o que acontece agora no mundo do esporte!</Typography>
-                        <Typography variant='h2' gutterBottom color='textPrimary' component='h2' align='center' className='texto1'>ENTRAR</Typography>
+                        <Typography variant='h2' gutterBottom color='textPrimary' component='h2' align='center' className='texto1'>Login</Typography>
                         <TextField value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>)=>updateModel(e)} id='usuario' label='usuario' variant='outlined' name='usuario' margin='normal' fullWidth style={{backgroundColor:'#eeeeee'}}/>
                         <TextField value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>)=>updateModel(e)} id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth style={{backgroundColor:'#eeeeee'}}/>
                         <Box marginTop={2} textAlign='center'>
@@ -91,7 +91,7 @@ function Login() {
                     </Box>
                 </Box>
             </Grid>
-            <Grid xs={6} className='imagem1'>
+            <Grid xs={7} className='imagem1'>
             </Grid>
         </Grid>
     );

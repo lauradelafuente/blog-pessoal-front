@@ -7,6 +7,7 @@ import { buscaId, post, put } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import { toast } from 'react-toastify';
+import { Box } from '@mui/material';
 
 function CadastroTema() {
     let navigate = useNavigate(); 
@@ -103,6 +104,7 @@ function CadastroTema() {
 
     return (
         <Container maxWidth="sm" className='container'>
+            <Box maxWidth="sm" className="topo">
             <form onSubmit={onSubmit}>
                 <Typography variant="h2" color="textSecondary" component="h1" align="center" className='textoform'>TEMA</Typography>
                 <Typography variant="h5" color="textSecondary" component="h1" align="center" className='textoform'>O tema pode ser uma liga, um(a) jogador(a), um time, fique à vontade na descrição</Typography>
@@ -111,6 +113,7 @@ function CadastroTema() {
                     Finalizar
                 </Button>
             </form>
+            </Box>
         </Container>
     )
 }
